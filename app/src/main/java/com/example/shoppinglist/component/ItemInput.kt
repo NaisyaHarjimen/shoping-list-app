@@ -11,10 +11,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ItemInput(text: String, onTextChange: (String) -> Unit, onAddItem:
-    () -> Unit) {
+fun ItemInput(
+    text: String,
+    onTextChange: (String) -> Unit,
+    onAddItem: () -> Unit
+) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 8.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         OutlinedTextField(
@@ -22,12 +27,18 @@ fun ItemInput(text: String, onTextChange: (String) -> Unit, onAddItem:
             onValueChange = onTextChange,
             label = { Text("Add new item") },
             modifier = Modifier.weight(1f),
-            shape = RoundedCornerShape(16.dp)
+            shape = MaterialTheme.shapes.medium, // pakai shapes dari theme
+            singleLine = true
         )
         Spacer(modifier = Modifier.width(8.dp))
-        Button(onClick = onAddItem) {
-            Icon(imageVector = Icons.Default.Add, contentDescription =
-                "Add Item")
+        Button(
+            onClick = onAddItem,
+            shape = MaterialTheme.shapes.small // konsisten sama theme
+        ) {
+            Icon(
+                imageVector = Icons.Default.Add,
+                contentDescription = "Add Item"
+            )
             Spacer(modifier = Modifier.width(4.dp))
             Text("Add")
         }

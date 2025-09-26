@@ -12,6 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.shoppinglist.component.*
 import com.example.shoppinglist.ui.theme.ShoppingListTheme
+import com.example.shoppinglist.components.ShoppingList
+import com.example.shoppinglist.component.ItemInput
+import com.example.shoppinglist.component.SearchInput
+import com.example.shoppinglist.component.Title
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

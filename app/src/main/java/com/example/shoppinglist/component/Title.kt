@@ -12,9 +12,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Title() {
+fun Title(
+    text: String = "Shopping List" // bisa diganti kalau nanti judulnya berbeda
+) {
     Text(
-        text = "Shopping List",
+        text = text,
         style = MaterialTheme.typography.headlineLarge.copy(
             fontWeight = FontWeight.Bold,
             fontSize = 32.sp,
